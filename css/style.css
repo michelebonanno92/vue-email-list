@@ -8,3 +8,16 @@ reset
     box-sizing: border-box;
  }
 
+ ol{
+  cursor: pointer;
+  margin: 10px 40px;
+  padding-left: 60px;
+ }
+
+ #app{
+  text-align: center;
+ }
+
+ #app > *{
+   margin: 20px 0;
+ }
