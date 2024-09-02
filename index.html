@@ -11,9 +11,18 @@
     <body>
       
         <div id="app">
+       
           <h2>
-            L'email presa dall'api di Boolean è: {{ email }}
+           {{ textEmail }} {{ email }}
           </h2>
+          <h1>
+            {{ titleEmail}}
+          </h1>
+            <ul>
+                <li  v-for="email in listEmail ">
+                    {{ email}}
+                </li>
+            </ul>
         </div>
         <!-- importato libreria axios in CDN -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -12,15 +12,26 @@ const { createApp } = Vue ;
     createApp({
         data() {
             return {
+                textEmail: " L'email presa dall'api di Boolean è: ",
                 email:'',
-                
+                titleEmail: " Lista dei dieci indirizzi email:",
+                listEmail: [''],
             };
         },
-        created() {
-            axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then( (resp) => {
-                this.email = resp.data.response })
+        created() {    
+            for (let i = 0; i < 10; i++){
+                axios
+                    .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                    .then( (resp) => {
+                        console.log('intero oggetto risposta',resp);
+                        console.log('risposta API',resp.data);
+                        console.log('dato email della risposta API',resp.data.response);
+
+                        this.email = resp.data.response,
+                        this.listEmail.push(resp.data.response)
+                        console.log(this.listEmail)
+                    });
+            }
         }
 
     }).mount('#app');
